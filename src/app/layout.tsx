@@ -10,23 +10,27 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  preload: true,
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
+    default: "Marco Contin Digital - Siti web veloci e automazioni per PMI",
+    template: `%s | Marco Contin Digital`,
   },
-  description: siteConfig.description,
+  description: "Specialista digitale per PMI Veneto. Stack moderni React/Next.js, performance <2s, automazioni business. Approccio industriale al web. Badia Polesine, servizio Italia.",
   keywords: [
-    "agenzia digitale",
-    "sviluppo web",
-    "SEO",
-    "marketing digitale",
-    "Next.js",
-    "React",
+    "sviluppo web PMI",
+    "siti web veloci",
+    "automazioni business", 
+    "React Next.js",
+    "PMI Veneto",
+    "sviluppatore Padova",
+    "performance web",
+    "Marco Contin",
     "consulenza digitale",
-    "PMI",
+    "stack moderni",
   ],
   authors: [
     {
@@ -81,7 +85,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" className={inter.variable}>
-      <body className="min-h-screen bg-background font-sans antialiased">
+      <body className="min-h-screen font-sans antialiased" suppressHydrationWarning>
         {children}
         <Analytics />
         {GA_TRACKING_ID && <GoogleAnalytics gaId={GA_TRACKING_ID} />}
